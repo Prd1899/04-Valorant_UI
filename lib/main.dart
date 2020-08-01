@@ -1,9 +1,15 @@
+import 'package:device_simulator/device_simulator.dart';
 import 'package:flutter/material.dart';
-import 'package:weather/weather.dart';
+import 'package:weather/valorant.dart';
 
 void main() {
   runApp(MyApp());
 }
+
+
+const bool debugEnableDeviceSimulator = true;
+
+//!RUN THE APP IN 8inch Foldable tablet Emulator for better results
 
 class MyApp extends StatelessWidget {
   @override
@@ -16,7 +22,15 @@ class MyApp extends StatelessWidget {
 
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home:Weather(),
+      home:DeviceSimulator(
+        
+        enable: debugEnableDeviceSimulator,
+        
+        child: Valorant()
+        
+        //Valorant2()
+        
+        ),
       debugShowCheckedModeBanner: false,
     );
   }
